@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class LevelObjectSpawner : MonoBehaviour
@@ -13,6 +14,8 @@ public class LevelObjectSpawner : MonoBehaviour
     [SerializeField] private Transform _topBound;
     [SerializeField] private Transform _bottomBound;
 
+    public float Progress => Math.Clamp(_globalTimer / _levelDuration, 0, 1);
+
     private void Update()
     {
         _timer += Time.deltaTime;
@@ -27,16 +30,15 @@ public class LevelObjectSpawner : MonoBehaviour
         {
             _hasCompletedLevel = true;
             SpawnEndLevelPrefab();
-            _globalTimer = 0;
         }
     }
 
     private void SpawnPrefab()
     {
-        float y = Random.Range(_bottomBound.transform.position.y, _topBound.transform.position.y);
+        float y = UnityEngine.Random.Range(_bottomBound.transform.position.y, _topBound.transform.position.y);
         float x = _bottomBound.transform.position.x;
         Vector2 spawnPos = new Vector2(x, y);
-        GameObject prefabToSpawn = _spawnPrefabs[Random.Range(0, _spawnPrefabs.Length)];
+        GameObject prefabToSpawn = _spawnPrefabs[UnityEngine.Random.Range(0, _spawnPrefabs.Length)];
         Instantiate(prefabToSpawn, spawnPos, prefabToSpawn.transform.rotation);
     }
 
