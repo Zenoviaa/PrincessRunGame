@@ -7,6 +7,7 @@ public class Player : MonoBehaviour
     private Animator _animator;
     private bool _isGrounded;
     private bool _endedJumpEarly;
+    private bool _doJump;
     private Vector2 _velocity;
 
     [Header("Stats")]
@@ -30,22 +31,29 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
+
         _rigidbody = GetComponent<Rigidbody2D>();
         _collider = GetComponent<CapsuleCollider2D>();
         _animator = GetComponent<Animator>();
+        _animator.SetBool("run", true);
     }
 
     private void Update()
     {
         if (Input.GetButtonDown("Jump"))
         {
-            ExecuteJump();
+            _doJump = true;
         }
     }
 
     private void FixedUpdate()
     {
         CheckCollisions();
+        if(_doJump && _isGrounded)
+        {
+            ExecuteJump();
+        }
+
         HandleJump();
         HandleAnimations();
         ApplyMovement();
@@ -63,6 +71,12 @@ public class Player : MonoBehaviour
         {
             _isGrounded = true;
             _endedJumpEarly = false;
+            _animator.SetBool("jump", false);
+
+        }
+        else if (_isGrounded && !groundHit)
+        {
+            _isGrounded = false;
         }
         Physics2D.queriesStartInColliders = prev;
     }
@@ -72,7 +86,7 @@ public class Player : MonoBehaviour
         if (!_isGrounded && !Input.GetButton("Jump") && _rigidbody.velocity.y > 0)
             _endedJumpEarly = true;
 
-        if (_isGrounded)
+        if (_isGrounded && _velocity.y <= 0f)
         {
             _velocity.y = groundForce;
         }
@@ -96,6 +110,7 @@ public class Player : MonoBehaviour
     {
         _velocity.y = jumpSpeed;
         _animator.SetBool("jump", true);
+        _doJump = false;
     }
 
     private void ApplyMovement()
