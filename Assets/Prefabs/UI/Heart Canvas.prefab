@@ -102,7 +102,7 @@ MonoBehaviour:
   - {fileID: 4064350889516869617}
   - {fileID: 2660375459166547563}
   - {fileID: 8829943495467439403}
-  _healthPipEmpty: {fileID: 0}
+  _healthPipEmpty: {fileID: 21300000, guid: 9a1ae621221d2784b91dff9a33db3f72, type: 3}
   _healthPipFilled: {fileID: 21300000, guid: 42f4d614d19184640a78dc453bd9d1c2, type: 3}
 --- !u!1 &4470481528851625106
 GameObject:

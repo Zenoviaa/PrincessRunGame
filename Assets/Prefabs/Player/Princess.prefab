@@ -145,7 +145,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 5
 --- !u!70 &7494827563821160177
 CapsuleCollider2D:
@@ -220,10 +220,10 @@ MonoBehaviour:
   playerLayer:
     serializedVersion: 2
     m_Bits: 64
-  jumpSpeed: 17
-  jumpEndEarlyModifier: 3
-  maxFallSpeed: 12
-  fallAcceleration: 60
+  jumpSpeed: 22
+  jumpEndEarlyModifier: 5
+  maxFallSpeed: 250
+  fallAcceleration: 50
   groundCheckDistance: 0.05
   groundForce: -1.5
   _hurtFXPrefab: {fileID: 0}
