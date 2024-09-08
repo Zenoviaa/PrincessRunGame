@@ -4,10 +4,10 @@ using UnityEngine.SceneManagement;
 internal class GameManager : MonoBehaviour
 {
     [SerializeField]
-    private UIGameOver _uiGameOverPrefab;
+    private UIGameOver _uiGameOver;
 
     [SerializeField]
-    private UILevelComplete _uiLevelCompletePrefab;
+    private UILevelComplete _uiLevelComplete;
 
     [field: SerializeField]
     public bool GameOvered { get; private set; }
@@ -52,14 +52,14 @@ internal class GameManager : MonoBehaviour
         if (GameOvered)
             return;
         GameOvered = true;
-        Instantiate(_uiGameOverPrefab);
+        _uiGameOver.gameObject.SetActive(true);
     }
     public void WinLevel()
     {
         if (GameOvered)
             return;
         GameOvered = true;
-        Instantiate(_uiLevelCompletePrefab);
+        _uiLevelComplete.gameObject.SetActive(true);
     }
 
     private string GetNextLevel(string currentLevel)
