@@ -226,6 +226,9 @@ MonoBehaviour:
   fallAcceleration: 50
   groundCheckDistance: 0.05
   groundForce: -1.5
+  deathTime: 0.5
+  deathDelay: 1
+  deathFallSpeed: 25
   _hurtFXPrefab: {fileID: 0}
   _hurtFXSound: {fileID: 0}
   _deathFXPrefab: {fileID: 0}

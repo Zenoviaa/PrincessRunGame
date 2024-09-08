@@ -8,6 +8,16 @@ public class Player : MonoBehaviour
     private bool _isGrounded;
     private bool _endedJumpEarly;
     private bool _doJump;
+    private bool _isDead;
+
+    private enum DeathState
+    {
+        Delayed,
+        Mario,
+        Ended
+    }
+    private DeathState _deathState;
+    private float _deathTimer;
     private Vector2 _velocity;
 
     [Header("Stats")]
@@ -22,6 +32,12 @@ public class Player : MonoBehaviour
     public float fallAcceleration;
     public float groundCheckDistance;
     public float groundForce;
+
+    [Header("Death Time")]
+    public float deathTime;
+    public float deathDelay;
+    public float deathFallSpeed;
+
 
     [Header("Feedback")]
     [SerializeField] private GameObject _hurtFXPrefab;
@@ -43,13 +59,62 @@ public class Player : MonoBehaviour
         {
             _doJump = true;
         }
+        if (_isDead)
+        {
+            HandleDeath();
+        }
+
     }
 
     private void FixedUpdate()
     {
+        if (!_isDead)
+        {
+            HandleMovement();
+        }
+    }
+
+    private void HandleDeath()
+    {
+        _animator.SetBool("death", true);
+        switch (_deathState)
+        {
+            case DeathState.Delayed:
+                _collider.isTrigger = true;
+                _velocity = Vector2.zero;
+                _deathTimer += Time.deltaTime;
+                if (_deathTimer >= deathDelay)
+                {
+                    _deathTimer = 0;
+                    _deathState = DeathState.Mario;
+                }
+                break;
+            case DeathState.Mario:
+
+                _deathTimer += Time.deltaTime;
+                if (_deathTimer < deathTime)
+                {
+                    float progress = _deathTimer / deathTime;
+                    float easedProgress = Easing.SpikeOutCirc(progress);
+                    _velocity.y = Mathf.Lerp(-deathFallSpeed, deathFallSpeed, easedProgress);
+                }
+
+                if (_deathTimer >= deathTime)
+                {
+                    GameManager gameManager = GameManager.Instance;
+                    gameManager.GameOver();
+                    _deathState = DeathState.Ended;
+                }
+                break;
+        }
+        ApplyMovement();
+    }
+
+    private void HandleMovement()
+    {
         _animator.SetBool("run", GameManager.Instance.StartedLevel);
         CheckCollisions();
-        if(_doJump && _isGrounded)
+        if (_doJump && _isGrounded)
         {
             ExecuteJump();
         }
@@ -144,6 +209,7 @@ public class Player : MonoBehaviour
 
     private void Lose()
     {
+        _isDead = true;
         FXManager fXManager = FXManager.Instance;
         fXManager.PlaySound(_deathFXSound);
         if (_deathFXPrefab != null)
@@ -151,7 +217,6 @@ public class Player : MonoBehaviour
             Instantiate(_deathFXPrefab, transform.position, _deathFXPrefab.transform.rotation);
         }
 
-        GameManager gameManager = GameManager.Instance;
-        gameManager.GameOver();
+ 
     }
 }
