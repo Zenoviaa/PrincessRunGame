@@ -12,6 +12,9 @@ internal class GameManager : MonoBehaviour
     [field: SerializeField]
     public bool GameOvered { get; private set; }
 
+    [field:SerializeField]
+    public bool StartedLevel { get; private set; } 
+
     [field: SerializeField]
     public string[] Levels { get; private set; }
 
@@ -37,16 +40,24 @@ internal class GameManager : MonoBehaviour
     public void RestartLevel()
     {
         GameOvered = false;
+        StartedLevel = false;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void NextLevel()
     {
         GameOvered = false;
+        StartedLevel = false;
         string currentLevel = SceneManager.GetActiveScene().name;
         string nextLevel = GetNextLevel(currentLevel);
         SceneManager.LoadScene(nextLevel);  
     }
+
+    public void StartLevel()
+    {
+        StartedLevel = true;
+    }
+
     public void GameOver()
     {
         if (GameOvered)

@@ -18,6 +18,9 @@ public class LevelObjectSpawner : MonoBehaviour
 
     private void Update()
     {
+        GameManager gameManager = GameManager.Instance;
+        if (!gameManager.StartedLevel)
+            return;
         _timer += Time.deltaTime;
         if(_timer >= _timeBetweenSpawns)
         {

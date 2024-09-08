@@ -35,7 +35,6 @@ public class Player : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody2D>();
         _collider = GetComponent<CapsuleCollider2D>();
         _animator = GetComponent<Animator>();
-        _animator.SetBool("run", true);
     }
 
     private void Update()
@@ -48,6 +47,7 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
+        _animator.SetBool("run", GameManager.Instance.StartedLevel);
         CheckCollisions();
         if(_doJump && _isGrounded)
         {
