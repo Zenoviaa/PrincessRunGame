@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -13,8 +14,8 @@ public class Player : MonoBehaviour
     private enum DeathState
     {
         Delayed,
-        Mario,
-        Ended
+        MarioUp,
+        MarioDown
     }
     private DeathState _deathState;
     private float _deathTimer;
@@ -34,8 +35,10 @@ public class Player : MonoBehaviour
     public float groundForce;
 
     [Header("Death Time")]
-    public float deathTime;
+    public float upDeathTime;
+    public float downDeathTime;
     public float deathDelay;
+    public float deathUpSpeed;
     public float deathFallSpeed;
 
 
@@ -77,6 +80,8 @@ public class Player : MonoBehaviour
     private void HandleDeath()
     {
         _animator.SetBool("death", true);
+        float progress;
+        float easedProgress;
         switch (_deathState)
         {
             case DeathState.Delayed:
@@ -86,25 +91,28 @@ public class Player : MonoBehaviour
                 if (_deathTimer >= deathDelay)
                 {
                     _deathTimer = 0;
-                    _deathState = DeathState.Mario;
+                    _deathState = DeathState.MarioUp;
                 }
                 break;
-            case DeathState.Mario:
+            case DeathState.MarioUp:
 
                 _deathTimer += Time.deltaTime;
-                if (_deathTimer < deathTime)
-                {
-                    float progress = _deathTimer / deathTime;
-                    float easedProgress = Easing.SpikeOutCirc(progress);
-                    _velocity.y = Mathf.Lerp(-deathFallSpeed, deathFallSpeed, easedProgress);
-                }
-
-                if (_deathTimer >= deathTime)
+                progress = _deathTimer / upDeathTime;
+                easedProgress = Easing.SpikeOutCirc(progress);
+                _velocity.y = Mathf.Lerp(_velocity.y, deathUpSpeed * easedProgress, Time.deltaTime * 15f);
+                if (_deathTimer >= upDeathTime)
                 {
                     GameManager gameManager = GameManager.Instance;
                     gameManager.GameOver();
-                    _deathState = DeathState.Ended;
+
+                    _deathTimer = 0f;
+                    _deathState = DeathState.MarioDown;
                 }
+
+                break;
+            case DeathState.MarioDown:
+                _deathTimer += Time.deltaTime;
+                _velocity.y = Mathf.Lerp(_velocity.y, -deathFallSpeed, Time.deltaTime * 5f);
                 break;
         }
         ApplyMovement();
@@ -193,6 +201,7 @@ public class Player : MonoBehaviour
         }
         else
         {
+        
             FXManager fXManager = FXManager.Instance;
             fXManager.PlaySound(_hurtFXSound);
             if (_hurtFXPrefab != null)
@@ -210,6 +219,10 @@ public class Player : MonoBehaviour
     private void Lose()
     {
         _isDead = true;
+
+        GameManager gameManager = GameManager.Instance;
+        gameManager.EndRun();
+
         FXManager fXManager = FXManager.Instance;
         fXManager.PlaySound(_deathFXSound);
         if (_deathFXPrefab != null)

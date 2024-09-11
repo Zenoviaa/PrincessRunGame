@@ -5,10 +5,13 @@ public class LevelObjectSpawner : MonoBehaviour
 {
     private float _globalTimer;
     private float _timer;
+    private float _collectibleTimer;
     private bool _hasCompletedLevel;
 
     [SerializeField] private float _timeBetweenSpawns;
+    [SerializeField] private float _timeBetweenCollectibleSpawns;
     [SerializeField] private float _levelDuration;
+    [SerializeField] private GameObject[] _collectibleSpawnPrefabs;
     [SerializeField] private GameObject[] _spawnPrefabs;
     [SerializeField] private GameObject _levelEndPrefab;
     [SerializeField] private Transform _topBound;
@@ -28,12 +31,27 @@ public class LevelObjectSpawner : MonoBehaviour
             _timer = 0;
         }
 
+        _collectibleTimer += Time.deltaTime;
+        if(_collectibleTimer >= _timeBetweenCollectibleSpawns)
+        {
+            SpawnCollectiblePrefab();
+            _collectibleTimer = 0;
+        }
+
         _globalTimer += Time.deltaTime;
         if(_globalTimer >= _levelDuration && !_hasCompletedLevel)
         {
             _hasCompletedLevel = true;
             SpawnEndLevelPrefab();
         }
+    }
+    private void SpawnCollectiblePrefab()
+    {
+        float y = UnityEngine.Random.Range(_bottomBound.transform.position.y, _topBound.transform.position.y);
+        float x = _bottomBound.transform.position.x;
+        Vector2 spawnPos = new Vector2(x, y);
+        GameObject prefabToSpawn = _collectibleSpawnPrefabs[UnityEngine.Random.Range(0, _collectibleSpawnPrefabs.Length)];
+        Instantiate(prefabToSpawn, spawnPos, prefabToSpawn.transform.rotation);
     }
 
     private void SpawnPrefab()

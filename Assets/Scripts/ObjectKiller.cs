@@ -7,8 +7,13 @@ using UnityEngine;
 
 internal class ObjectKiller : MonoBehaviour
 {
+    public LayerMask layerToKill;
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Destroy(collision.gameObject);
+        if(collision.gameObject.layer == layerToKill)
+        {
+            Destroy(collision.gameObject);
+        }
+
     }
 }

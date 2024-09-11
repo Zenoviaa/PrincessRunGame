@@ -12,6 +12,9 @@ internal class GameManager : MonoBehaviour
     [field: SerializeField]
     public bool GameOvered { get; private set; }
 
+    [field: SerializeField]
+    public bool EndedRun { get; private set; }
+
     [field:SerializeField]
     public bool StartedLevel { get; private set; } 
 
@@ -39,6 +42,7 @@ internal class GameManager : MonoBehaviour
 
     public void RestartLevel()
     {
+        EndedRun = false;
         GameOvered = false;
         StartedLevel = false;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
@@ -46,6 +50,7 @@ internal class GameManager : MonoBehaviour
 
     public void NextLevel()
     {
+        EndedRun = false;
         GameOvered = false;
         StartedLevel = false;
         string currentLevel = SceneManager.GetActiveScene().name;
@@ -58,10 +63,15 @@ internal class GameManager : MonoBehaviour
         StartedLevel = true;
     }
 
+    public void EndRun()
+    {
+        EndedRun = true;
+    }
     public void GameOver()
     {
         if (GameOvered)
             return;
+        EndedRun = true;
         GameOvered = true;
         Instantiate(_uiGameOverPrefab);
     }
@@ -69,6 +79,7 @@ internal class GameManager : MonoBehaviour
     {
         if (GameOvered)
             return;
+        EndedRun = true;
         GameOvered = true;
         Instantiate(_uiLevelCompletePrefab);
     }
