@@ -216,13 +216,17 @@ public class Player : MonoBehaviour
         coins += value;
     }
 
+    //the minions are escaping.
+
     private void Lose()
     {
+        
         _isDead = true;
 
         GameManager gameManager = GameManager.Instance;
         gameManager.EndRun();
 
+         
         FXManager fXManager = FXManager.Instance;
         fXManager.PlaySound(_deathFXSound);
         if (_deathFXPrefab != null)
