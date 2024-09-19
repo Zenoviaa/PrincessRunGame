@@ -45,8 +45,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _uiGameOverPrefab: {fileID: 4623457314700775354, guid: 59f2a02903a4dc34b8ffadbc31d2a7ad, type: 3}
+  _transitionPrefab: {fileID: 6565013191699768043, guid: c29eb23e47cbd6f46997fb4852071179, type: 3}
   _uiLevelCompletePrefab: {fileID: 2048206650252357104, guid: 6326eb6c14099ed4ba8aebc2e09d2756, type: 3}
   <GameOvered>k__BackingField: 0
+  <EndedRun>k__BackingField: 0
+  <StartedLevel>k__BackingField: 0
   <Levels>k__BackingField:
   - Level1
   - Level2

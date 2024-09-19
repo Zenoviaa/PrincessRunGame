@@ -24,5 +24,12 @@ internal class MovingSpike : MonoBehaviour
     {
         _velocity.x = movementSpeed;
         _rigidbody.velocity = _velocity;
+
+        GameManager gameManager = GameManager.Instance;
+        if (gameManager.EndedRun)
+        {
+            _rigidbody.velocity = Vector2.zero;
+        }
+    
     }
 }

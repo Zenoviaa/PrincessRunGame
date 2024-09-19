@@ -8,7 +8,9 @@ public class LevelObjectSpawner : MonoBehaviour
     private float _collectibleTimer;
     private bool _hasCompletedLevel;
 
-    [SerializeField] private float _timeBetweenSpawns;
+    private float _timeBetweenSpawns;
+    [SerializeField] private float _minTimeBetweenSpawns = 0.75f;
+    [SerializeField] private float _maxTimeBetweenSpawns = 2f;
     [SerializeField] private float _timeBetweenCollectibleSpawns;
     [SerializeField] private float _levelDuration;
     [SerializeField] private GameObject[] _collectibleSpawnPrefabs;
@@ -19,10 +21,17 @@ public class LevelObjectSpawner : MonoBehaviour
 
     public float Progress => Math.Clamp(_globalTimer / _levelDuration, 0, 1);
 
+    private void Start()
+    {
+        _timeBetweenSpawns = UnityEngine.Random.Range(_minTimeBetweenSpawns, _maxTimeBetweenSpawns);
+    }
+
     private void Update()
     {
         GameManager gameManager = GameManager.Instance;
         if (!gameManager.StartedLevel)
+            return;
+        if (gameManager.EndedRun)
             return;
         _timer += Time.deltaTime;
         if(_timer >= _timeBetweenSpawns)
@@ -56,6 +65,7 @@ public class LevelObjectSpawner : MonoBehaviour
 
     private void SpawnPrefab()
     {
+        _timeBetweenSpawns = UnityEngine.Random.Range(_minTimeBetweenSpawns, _maxTimeBetweenSpawns);
         float y = UnityEngine.Random.Range(_bottomBound.transform.position.y, _topBound.transform.position.y);
         float x = _bottomBound.transform.position.x;
         Vector2 spawnPos = new Vector2(x, y);

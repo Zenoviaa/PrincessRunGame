@@ -6,6 +6,9 @@ internal class GameManager : MonoBehaviour
     [SerializeField]
     private UIGameOver _uiGameOverPrefab;
 
+    [SerializeField] 
+    private UISquareTransition _transitionPrefab;
+
     [SerializeField]
     private UILevelComplete _uiLevelCompletePrefab;
 
@@ -48,6 +51,13 @@ internal class GameManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
+    public void ResetDefaults()
+    {
+        EndedRun = false;
+        GameOvered = false;
+        StartedLevel = false;
+    }
+
     public void NextLevel()
     {
         EndedRun = false;
@@ -82,6 +92,11 @@ internal class GameManager : MonoBehaviour
         EndedRun = true;
         GameOvered = true;
         Instantiate(_uiLevelCompletePrefab);
+    }
+    public void LoadSceneWithTransition(string scene)
+    {
+        UISquareTransition transition = Instantiate(_transitionPrefab);
+        transition.LoadScene(scene);
     }
 
     private string GetNextLevel(string currentLevel)
