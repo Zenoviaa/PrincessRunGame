@@ -29,7 +29,6 @@ internal class MovingSpike : MonoBehaviour
         if (gameManager.EndedRun)
         {
             _rigidbody.velocity = Vector2.zero;
-        }
-    
+        }  
     }
 }

@@ -45163,7 +45163,7 @@ MonoBehaviour:
   _timeBetweenCollectibleSpawns: 7
   _levelDuration: 45
   _collectibleSpawnPrefabs:
-  - {fileID: 7048446074153465411, guid: b2d25e325f499d0468f1f2666669179f, type: 3}
+  - {fileID: 7568150034493050127, guid: 9c2cc8b60386ca84ea8ceae89c2f54b7, type: 3}
   _spawnPrefabs:
   - {fileID: 1004704174853159372, guid: 9d1ff2c48358ffb44b195809e4b8fe35, type: 3}
   - {fileID: 1346122197748186844, guid: f5f607af98aa25b43978815bf9ff0b41, type: 3}

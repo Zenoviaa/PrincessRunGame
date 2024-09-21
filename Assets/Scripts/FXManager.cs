@@ -1,13 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.Audio;
+﻿using UnityEngine;
 
 public class FXManager : MonoBehaviour
 {
     private AudioSource _musicSource;
     private AudioSource[] _audioSources;
+
     [SerializeField] private float _maxPitchVariation = 0.05f;
+    [SerializeField] private EffectSpriteFlash _spriteFlashPrefab;
 
     private void Awake()
     {
@@ -78,4 +77,17 @@ public class FXManager : MonoBehaviour
             _musicSource.Play();
         }
     }
+
+
+    public void Screenshake(int pixelStrength, float duration)
+    {
+        CameraFollow cameraFollow = CameraFollow.Instance;
+        cameraFollow.Screenshake(pixelStrength, duration);
+    }
+    public void SpriteFlash(SpriteRenderer target)
+    {
+        EffectSpriteFlash spriteFlash = Instantiate(_spriteFlashPrefab);
+        spriteFlash.Target = target;
+    }
+
 }

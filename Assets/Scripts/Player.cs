@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    private SpriteRenderer _spriteRenderer;
     private Rigidbody2D _rigidbody;
     private CapsuleCollider2D _collider;
     private Animator _animator;
@@ -47,10 +48,12 @@ public class Player : MonoBehaviour
     [SerializeField] private AudioClip _hurtFXSound;
     [SerializeField] private GameObject _deathFXPrefab;
     [SerializeField] private AudioClip _deathFXSound;
+    [SerializeField] private int _screenshakePixelStrength;
+    [SerializeField] private float _screenshakeDuration;
 
     private void Start()
     {
-
+        _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         _rigidbody = GetComponent<Rigidbody2D>();
         _collider = GetComponent<CapsuleCollider2D>();
         _animator = GetComponent<Animator>();
@@ -186,6 +189,13 @@ public class Player : MonoBehaviour
         _doJump = false;
     }
 
+    public void ExecuteSuperJump(float jumpSpeedModifier)
+    {
+        _velocity.y = jumpSpeed * jumpSpeedModifier;
+        _animator.SetBool("jump", true);
+        _doJump = false;
+    }
+
     private void ApplyMovement()
     {
         _rigidbody.velocity = _velocity;
@@ -204,6 +214,8 @@ public class Player : MonoBehaviour
         
             FXManager fXManager = FXManager.Instance;
             fXManager.PlaySound(_hurtFXSound);
+            fXManager.Screenshake(_screenshakePixelStrength, _screenshakeDuration);
+            fXManager.SpriteFlash(_spriteRenderer);
             if (_hurtFXPrefab != null)
             {
                 Instantiate(_hurtFXPrefab, transform.position, _hurtFXPrefab.transform.rotation);
