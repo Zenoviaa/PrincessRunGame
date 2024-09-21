@@ -12,7 +12,7 @@ public class UIDialogueMaker : MonoBehaviour
 
     private void Update()
     {
-        if (_dialoging && Input.GetKeyDown("Jump"))
+        if (_dialoging && Input.GetButtonDown("Jump"))
         {
             Continue();
         }

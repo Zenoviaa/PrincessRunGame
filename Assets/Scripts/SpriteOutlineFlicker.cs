@@ -5,6 +5,7 @@ public class SpriteOutlineFlicker : MonoBehaviour
     private float _time;
     private bool _otherColor;
     private SpriteRenderer[] _spriteRenderers;
+    [SerializeField] private SpriteRenderer _targetSpriteRenderer;
     [SerializeField] private SpriteRenderer _spritePrefab;
     [SerializeField] private float _distance;
     [SerializeField] private float _flickerTime;
@@ -13,6 +14,7 @@ public class SpriteOutlineFlicker : MonoBehaviour
 
     private void Start()
     {
+        _targetSpriteRenderer = GetComponent<SpriteRenderer>();
         _spriteRenderers = new SpriteRenderer[4];
         _spriteRenderers[0] = CreateOutline(new Vector2(_distance, 0));
         _spriteRenderers[1] = CreateOutline(new Vector2(-_distance, 0));
@@ -53,6 +55,7 @@ public class SpriteOutlineFlicker : MonoBehaviour
         {
             SpriteRenderer spriteRenderer = _spriteRenderers[i];
             spriteRenderer.material.SetColor("_Color", color);
+            spriteRenderer.sprite = _targetSpriteRenderer.sprite;
         }
     }
 }

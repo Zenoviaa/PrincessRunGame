@@ -34,7 +34,6 @@ internal class UILevelComplete : MonoBehaviour
     private float _duration;
     private Player _player;
     [SerializeField] private UIImageTween[] _tweens;
-    [SerializeField] private UIDialogueMaker _dialogueBoxMaker;
     [SerializeField] private TMP_Text _crystalBerryTMP;
 
     public float GetLongestTween()
@@ -134,7 +133,7 @@ internal class UILevelComplete : MonoBehaviour
         {
             _time = 0;
             _state = State.Dialogue;
-            _dialogueBoxMaker.StartDialogue(NextLevel);
+            UILevelCompleteDialogue.Instance.dialogueBoxMaker.StartDialogue(NextLevel);
         }
     }
 
@@ -142,4 +141,6 @@ internal class UILevelComplete : MonoBehaviour
     {
 
     }
+
+ 
 }

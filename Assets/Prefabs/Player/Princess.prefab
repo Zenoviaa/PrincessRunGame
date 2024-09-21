@@ -235,3 +235,5 @@ MonoBehaviour:
   _hurtFXSound: {fileID: 0}
   _deathFXPrefab: {fileID: 0}
   _deathFXSound: {fileID: 0}
+  _screenshakePixelStrength: 8
+  _screenshakeDuration: 0.5

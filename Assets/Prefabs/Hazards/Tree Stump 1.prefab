@@ -138,6 +138,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2673625393535261274}
   - component: {fileID: 225764828511235006}
+  - component: {fileID: 1382708152696002873}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -212,3 +213,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1382708152696002873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5003594783650437023}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 515b9b3b78fdf2044a9d95bce016753a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spritePrefab: {fileID: 5452549196646626765, guid: 05eb7ea9af6237a4c894155fadd28a6c, type: 3}
+  _distance: 0.0625
+  _flickerTime: 0.5
+  _flickerColor: {r: 1, g: 0, b: 0, a: 1}
+  _flickerColor2: {r: 1, g: 1, b: 1, a: 1}

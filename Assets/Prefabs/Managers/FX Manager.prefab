@@ -45,3 +45,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maxPitchVariation: 0.05
+  _spriteFlashPrefab: {fileID: 5706997898038784681, guid: a3ffa6c70728e9541b63c3abd83dba81, type: 3}

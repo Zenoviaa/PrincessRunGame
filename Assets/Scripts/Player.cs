@@ -123,7 +123,7 @@ public class Player : MonoBehaviour
 
     private void HandleMovement()
     {
-        _animator.SetBool("run", GameManager.Instance.StartedLevel);
+        _animator.SetBool("run", GameManager.Instance.StartedLevel && !GameManager.Instance.EndedRun);
         CheckCollisions();
         if (_doJump && _isGrounded)
         {
