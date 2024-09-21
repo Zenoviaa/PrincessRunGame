@@ -240,6 +240,8 @@ public class Player : MonoBehaviour
 
          
         FXManager fXManager = FXManager.Instance;
+        fXManager.Screenshake(_screenshakePixelStrength, _screenshakeDuration);
+        fXManager.SpriteFlash(_spriteRenderer);
         fXManager.PlaySound(_deathFXSound);
         if (_deathFXPrefab != null)
         {
