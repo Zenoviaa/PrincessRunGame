@@ -414,7 +414,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Title Card Canvas
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6139981167531019181, guid: 6093bd3fdf14eff43878310fded7dfa8, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
