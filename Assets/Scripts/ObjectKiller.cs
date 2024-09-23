@@ -8,12 +8,13 @@ using UnityEngine;
 internal class ObjectKiller : MonoBehaviour
 {
     public LayerMask layerToKill;
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if(collision.gameObject.layer == layerToKill)
-        {
-            Destroy(collision.gameObject);
-        }
+    public float killRadius = 16;
 
+    private void Update()
+    {
+        foreach(var g in Physics2D.OverlapCircleAll(transform.position, killRadius, layerToKill))
+        {
+            Destroy(g.gameObject);
+        }
     }
 }

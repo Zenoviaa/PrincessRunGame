@@ -4,7 +4,7 @@ using UnityEngine;
 internal class MovingSpike : MonoBehaviour
 {
     private float _swoopTimer;
-    private bool _goingUp;
+
     private Rigidbody2D _rigidbody;
     private Vector2 _velocity;
     public float movementSpeed;
@@ -12,6 +12,9 @@ internal class MovingSpike : MonoBehaviour
 
     public LayerMask spikeLayer;
 
+    [Header("Swooping")]
+    [SerializeField]
+    private bool _goingUp;
 
     public bool swooping;
     public float swoopMovementSpeed;

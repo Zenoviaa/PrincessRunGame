@@ -45839,10 +45839,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _minTimeBetweenSpawns: 0.75
   _maxTimeBetweenSpawns: 2
-  _timeBetweenCollectibleSpawns: 7
   _levelDuration: 45
-  _collectibleSpawnPrefabs:
-  - {fileID: 7568150034493050127, guid: 9c2cc8b60386ca84ea8ceae89c2f54b7, type: 3}
   _spawnPrefabs:
   - prefab: {fileID: 8940366407805515817, guid: e7e5ecf2ece71d34ca227882fd2bd1b0, type: 3}
     spawnLocation: 1
@@ -45854,10 +45851,22 @@ MonoBehaviour:
     spawnLocation: 1
   - prefab: {fileID: 6968128909192481352, guid: 3dee15b8f2c710d4a90f170b99fbe23e, type: 3}
     spawnLocation: 2
+  - prefab: {fileID: 5025618485743313705, guid: 50bf28eaabcd5e246b287fa101504b4c, type: 3}
+    spawnLocation: 1
   _levelEndPrefab: {fileID: 108690489299409527, guid: 83c5d51406c9cb14bb826d70e4a49f84, type: 3}
+  _timeBetweenCollectibleSpawns: 7
+  _collectibleSpawnPrefabs:
+  - {fileID: 7568150034493050127, guid: 9c2cc8b60386ca84ea8ceae89c2f54b7, type: 3}
+  _minTimeBetweenRaySpawns: 0.75
+  _maxTimeBetweenRaySpawns: 2
+  _minRayScaleX: 1
+  _maxRayScaleX: 1
+  _prefabs:
+  - {fileID: 5625396294551019226, guid: 22f3e37d60111784e9ea755196f4c064, type: 3}
+  - {fileID: 8207638015687351120, guid: 50b7a45828baacc4d821e9e606101b85, type: 3}
   _topBound: {fileID: 572131956}
   _bottomBound: {fileID: 785638021}
-  _floor: {fileID: 0}
+  _floor: {fileID: 785638021}
   _ceiling: {fileID: 572131956}
 --- !u!4 &2575575605545922549 stripped
 Transform:
@@ -46185,7 +46194,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4409414080047458938, guid: 75199160d91668b488cf37060d2e5334, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -15
+      value: -60
       objectReference: {fileID: 0}
     - target: {fileID: 4409414080047458938, guid: 75199160d91668b488cf37060d2e5334, type: 3}
       propertyPath: m_LocalPosition.y
@@ -46223,13 +46232,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7668953238586304165, guid: 75199160d91668b488cf37060d2e5334, type: 3}
-      propertyPath: layerToKill.m_Bits
-      value: 128
-      objectReference: {fileID: 0}
     - target: {fileID: 7831092309833609630, guid: 75199160d91668b488cf37060d2e5334, type: 3}
       propertyPath: m_Name
       value: Object Killer
+      objectReference: {fileID: 0}
+    - target: {fileID: 7831092309833609630, guid: 75199160d91668b488cf37060d2e5334, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
