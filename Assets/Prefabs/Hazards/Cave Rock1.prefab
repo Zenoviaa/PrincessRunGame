@@ -231,3 +231,6 @@ MonoBehaviour:
   spikeLayer:
     serializedVersion: 2
     m_Bits: 128
+  swooping: 0
+  swoopMovementSpeed: 0
+  swoopDuration: 0

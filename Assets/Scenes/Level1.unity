@@ -45613,17 +45613,17 @@ MonoBehaviour:
   - {fileID: 7568150034493050127, guid: 9c2cc8b60386ca84ea8ceae89c2f54b7, type: 3}
   _spawnPrefabs:
   - prefab: {fileID: 5886282258383207883, guid: ccf2a37daec61be469a60d4203d57b84, type: 3}
-    spawnLocation: 0
+    spawnLocation: 1
   - prefab: {fileID: 3770073315778127692, guid: 8f2f79c75d7dfb74288205a63a843770, type: 3}
-    spawnLocation: 0
+    spawnLocation: 1
   - prefab: {fileID: 1346122197748186844, guid: f5f607af98aa25b43978815bf9ff0b41, type: 3}
-    spawnLocation: 0
+    spawnLocation: 1
   - prefab: {fileID: 1004704174853159372, guid: 9d1ff2c48358ffb44b195809e4b8fe35, type: 3}
-    spawnLocation: 0
+    spawnLocation: 1
   _levelEndPrefab: {fileID: 108690489299409527, guid: 83c5d51406c9cb14bb826d70e4a49f84, type: 3}
   _topBound: {fileID: 572131956}
   _bottomBound: {fileID: 785638021}
-  _floor: {fileID: 0}
+  _floor: {fileID: 785638021}
   _ceiling: {fileID: 0}
 --- !u!4 &2575575605545922549 stripped
 Transform:

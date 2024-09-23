@@ -45845,13 +45845,13 @@ MonoBehaviour:
   - {fileID: 7568150034493050127, guid: 9c2cc8b60386ca84ea8ceae89c2f54b7, type: 3}
   _spawnPrefabs:
   - prefab: {fileID: 8940366407805515817, guid: e7e5ecf2ece71d34ca227882fd2bd1b0, type: 3}
-    spawnLocation: 0
+    spawnLocation: 1
   - prefab: {fileID: 4584181929201751349, guid: 39f89c82fe1f39d4793efd062d835624, type: 3}
-    spawnLocation: 0
+    spawnLocation: 1
   - prefab: {fileID: 1575574344224908164, guid: 452803d0b54ba8b45aa183bacdc2f200, type: 3}
-    spawnLocation: 0
+    spawnLocation: 1
   - prefab: {fileID: 8014317172563602279, guid: 349647077905ee04a99bfae0d60abb44, type: 3}
-    spawnLocation: 0
+    spawnLocation: 1
   - prefab: {fileID: 6968128909192481352, guid: 3dee15b8f2c710d4a90f170b99fbe23e, type: 3}
     spawnLocation: 2
   _levelEndPrefab: {fileID: 108690489299409527, guid: 83c5d51406c9cb14bb826d70e4a49f84, type: 3}

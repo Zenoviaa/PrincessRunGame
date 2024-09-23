@@ -51,6 +51,7 @@ internal class MovingSpike : MonoBehaviour
             }
         }
 
+
         _rigidbody.velocity = _velocity;
 
 
