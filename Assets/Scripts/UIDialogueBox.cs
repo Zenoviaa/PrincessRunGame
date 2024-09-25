@@ -116,6 +116,7 @@ public class UIDialogueBox : MonoBehaviour
 
     public void Talk(Dialogue dialogue)
     {
+        timeBetweenTypes = dialogue.timeBetweenTexts;
         _talkSound = dialogue.talkSound;
         _bustImage.sprite = dialogue.bust;
         _typewriterTime = 0;

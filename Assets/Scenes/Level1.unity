@@ -157,16 +157,20 @@ MonoBehaviour:
   - text: "Ahhh I don\u2019t feel so well... "
     bust: {fileID: 21300000, guid: de47ffcb787edcc4e857e2b51801aa7e, type: 3}
     talkSound: {fileID: 8300000, guid: 61890c235577a8a4fa75fd23d8ec7737, type: 3}
+    timeBetweenTexts: 0.05
   - text: "For monarchs sake please tell me you didn\u2019t eat those berries "
     bust: {fileID: 21300000, guid: b754906601698a14e9da78ff6cbb5610, type: 3}
     talkSound: {fileID: 8300000, guid: aebff10e667b1304b926f30502f74218, type: 3}
+    timeBetweenTexts: 0.09
   - text: ...
     bust: {fileID: 21300000, guid: 90e658f07551c1c4c87ed10ba10e4a45, type: 3}
     talkSound: {fileID: 8300000, guid: 61890c235577a8a4fa75fd23d8ec7737, type: 3}
+    timeBetweenTexts: 0.05
   - text: "(The witch will probably need some supply\u2019s to make a potion for
       you let\u2019s collect some on our way back! )(optional) "
     bust: {fileID: 21300000, guid: 8d8f4638edfb8654a84385fc3b0fc150, type: 3}
     talkSound: {fileID: 8300000, guid: aebff10e667b1304b926f30502f74218, type: 3}
+    timeBetweenTexts: 0.09
   _continueSound: {fileID: 8300000, guid: fdb9cc239eda9b74f86061e9ee17a6d3, type: 3}
 --- !u!114 &37451940
 MonoBehaviour:
@@ -1302,9 +1306,11 @@ MonoBehaviour:
       prince to the castle fast '
     bust: {fileID: 21300000, guid: b754906601698a14e9da78ff6cbb5610, type: 3}
     talkSound: {fileID: 8300000, guid: aebff10e667b1304b926f30502f74218, type: 3}
+    timeBetweenTexts: 0.09
   - text: 'U-underground caves will lead to the town '
     bust: {fileID: 21300000, guid: de47ffcb787edcc4e857e2b51801aa7e, type: 3}
     talkSound: {fileID: 8300000, guid: 61890c235577a8a4fa75fd23d8ec7737, type: 3}
+    timeBetweenTexts: 0.05
   _continueSound: {fileID: 8300000, guid: fdb9cc239eda9b74f86061e9ee17a6d3, type: 3}
 --- !u!114 &1358969863
 MonoBehaviour:

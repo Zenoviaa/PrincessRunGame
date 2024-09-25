@@ -119,6 +119,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4ffa40eca4682640a6dc3e19a9e173c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _musicClip: {fileID: 8300000, guid: ab5e8e6f385fb1241821a3337bf83eda, type: 3}
 --- !u!114 &-357295560921816031
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -132,3 +133,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: -7
+  snaptoGround: 0
+  spikeLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  _goingUp: 0
+  swooping: 0
+  swoopMovementSpeed: 0
+  swoopDuration: 0
