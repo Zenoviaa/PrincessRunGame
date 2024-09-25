@@ -82,7 +82,7 @@ internal class UILevelComplete : MonoBehaviour
                 break;
         }
 
-        if (Input.GetButtonDown("Jump") && !_continueToDialogue)
+        if (Input.GetButtonDown("Jump") && !_continueToDialogue && _state == State.Idle)
         {
             _continueToDialogue = true;
         }

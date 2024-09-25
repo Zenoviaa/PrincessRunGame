@@ -38,6 +38,7 @@ public class UISquareTransition : MonoBehaviour
                 if (_time >= _duration)
                 {
                     _transitioning = false;
+                GameManager.Instance.ResetDefaults();
                     SceneLoader.Main.LoadScene(_sceneToLoad, useTransition: false, onFinish: Out);
                 }
             }

@@ -45928,7 +45928,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _minTimeBetweenSpawns: 0.75
   _maxTimeBetweenSpawns: 2
-  _levelDuration: 45
+  _levelDuration: 50
   _spawnPrefabs:
   - prefab: {fileID: 8940366407805515817, guid: e7e5ecf2ece71d34ca227882fd2bd1b0, type: 3}
     spawnLocation: 1
@@ -45953,9 +45953,16 @@ MonoBehaviour:
   _prefabs:
   - {fileID: 5625396294551019226, guid: 22f3e37d60111784e9ea755196f4c064, type: 3}
   - {fileID: 8207638015687351120, guid: 50b7a45828baacc4d821e9e606101b85, type: 3}
+  _minTimeBetweenBackgroundObjectSpawns: 0.75
+  _maxTimeBetweenBackgroundObjectSpawns: 2
+  _backgroundObjectPrefabs: []
+  _minTimeBetweenPlatformSpawns: 0.75
+  _maxTimeBetweenPlatformSpawns: 2
+  _platformPrefabs: []
   _topBound: {fileID: 572131956}
   _bottomBound: {fileID: 785638021}
   _floor: {fileID: 785638021}
+  _platformFloor: {fileID: 0}
   _ceiling: {fileID: 572131956}
 --- !u!4 &2575575605545922549 stripped
 Transform:

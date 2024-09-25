@@ -44,16 +44,24 @@ public class UIDialogueMaker : MonoBehaviour
 
     private void Continue()
     {
-        _dialogueIndex++;
-        if(_dialogue.Length > _dialogueIndex)
+        if (_instance.isFinished)
         {
-            Dialogue dialogue = _dialogue[_dialogueIndex];
-            _instance.Talk(dialogue);
+            _dialogueIndex++;
+            if (_dialogue.Length > _dialogueIndex)
+            {
+                Dialogue dialogue = _dialogue[_dialogueIndex];
+                _instance.Talk(dialogue);
+            }
+            else
+            {
+
+                _instance.Exit(_onFinishCallback);
+            }
         }
         else
         {
-        
-            _instance.Exit(_onFinishCallback);
+            _instance.Finish();
         }
+
     }
 }

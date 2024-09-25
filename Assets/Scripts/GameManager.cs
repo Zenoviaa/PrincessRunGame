@@ -60,9 +60,6 @@ internal class GameManager : MonoBehaviour
 
     public void NextLevel()
     {
-        EndedRun = false;
-        GameOvered = false;
-        StartedLevel = false;
         string currentLevel = SceneManager.GetActiveScene().name;
         string nextLevel = GetNextLevel(currentLevel);
         LoadSceneWithTransition(nextLevel);  
@@ -95,9 +92,7 @@ internal class GameManager : MonoBehaviour
     }
     public void LoadSceneWithTransition(string scene)
     {
-        EndedRun = false;
-        GameOvered = false;
-        StartedLevel = false;
+       
         UISquareTransition transition = Instantiate(_transitionPrefab);
         transition.LoadScene(scene);
     }

@@ -30,7 +30,7 @@ public class UIDialogueBox : MonoBehaviour
 
     public float timeBetweenTypes;
 
-
+    public bool isFinished;
     private void Start()
     {
         _startSwoopPos = _startSwoopPos + _swoopOffset;
@@ -74,6 +74,10 @@ public class UIDialogueBox : MonoBehaviour
         {
             _typewriterIndex++;
             _typewriterTime = 0;
+            if(_typewriterIndex >= _dialogueTMP.text.Length)
+            {
+                isFinished = true;
+            }
         }
 
         _dialogueTMP.maxVisibleCharacters = _typewriterIndex;
@@ -109,5 +113,11 @@ public class UIDialogueBox : MonoBehaviour
         _typewriterIndex = 0;
         _dialogueTMP.maxVisibleCharacters = 0;
         _dialogueTMP.text = dialogue.text;
+    }
+
+    public void Finish()
+    {
+        isFinished = true;
+        _typewriterIndex = _dialogueTMP.text.Length;
     }
 }

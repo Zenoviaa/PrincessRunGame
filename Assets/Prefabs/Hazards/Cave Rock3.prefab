@@ -95,7 +95,7 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.3}
   serializedVersion: 2
   m_Radius: 0.5
 --- !u!114 &3908330891559472173
@@ -128,6 +128,7 @@ MonoBehaviour:
   spikeLayer:
     serializedVersion: 2
     m_Bits: 128
+  _goingUp: 0
   swooping: 0
   swoopMovementSpeed: 0
   swoopDuration: 0
