@@ -44,8 +44,7 @@ public class UIDialogueMaker : MonoBehaviour
 
     private void Continue()
     {
-        FXManager fXManager = FXManager.Instance;
-        fXManager.PlaySound(_continueSound);
+
         if (_instance.isFinished)
         {
             _dialogueIndex++;
@@ -53,6 +52,8 @@ public class UIDialogueMaker : MonoBehaviour
             {
                 Dialogue dialogue = _dialogue[_dialogueIndex];
                 _instance.Talk(dialogue);
+                FXManager fXManager = FXManager.Instance;
+                fXManager.PlaySound(_continueSound);
             }
             else
             {

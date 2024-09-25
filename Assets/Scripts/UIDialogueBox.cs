@@ -80,8 +80,12 @@ public class UIDialogueBox : MonoBehaviour
             {
                 isFinished = true;
             }
-            FXManager fXManager = FXManager.Instance;
-            fXManager.PlaySound(_talkSound);
+            else
+            {
+                FXManager fXManager = FXManager.Instance;
+                fXManager.PlaySound(_talkSound);
+            }
+     
         }
 
         _dialogueTMP.maxVisibleCharacters = _typewriterIndex;

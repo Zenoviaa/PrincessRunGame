@@ -45509,6 +45509,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1819613581
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1819613582}
+  m_Layer: 0
+  m_Name: Platform Floor
+  m_TagString: Untagged
+  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1819613582
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1819613581}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 14.007, y: -3.11, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2575575605545922549}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1858118677
 GameObject:
   m_ObjectHideFlags: 0
@@ -45934,6 +45965,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 278894686135090379, guid: 06082a4258ae11a40b0bb1cc0cf3b573, type: 3}
       insertIndex: -1
       addedObject: {fileID: 785638021}
+    - targetCorrespondingSourceObject: {fileID: 278894686135090379, guid: 06082a4258ae11a40b0bb1cc0cf3b573, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1819613582}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 2481342209752009621, guid: 06082a4258ae11a40b0bb1cc0cf3b573, type: 3}
       insertIndex: -1
@@ -45983,16 +46017,20 @@ MonoBehaviour:
   _prefabs:
   - {fileID: 5625396294551019226, guid: 22f3e37d60111784e9ea755196f4c064, type: 3}
   - {fileID: 8207638015687351120, guid: 50b7a45828baacc4d821e9e606101b85, type: 3}
-  _minTimeBetweenBackgroundObjectSpawns: 0.75
-  _maxTimeBetweenBackgroundObjectSpawns: 2
-  _backgroundObjectPrefabs: []
+  _minTimeBetweenBackgroundObjectSpawns: 0.1
+  _maxTimeBetweenBackgroundObjectSpawns: 0.3
+  _backgroundObjectPrefabs:
+  - {fileID: 574684937925064028, guid: 869bfb719c03d8640ab48a3ac8cab737, type: 3}
+  - {fileID: 574684937925064028, guid: 869bfb719c03d8640ab48a3ac8cab737, type: 3}
+  - {fileID: 574684937925064028, guid: 869bfb719c03d8640ab48a3ac8cab737, type: 3}
+  - {fileID: 4747199288754568739, guid: a4709152f0e16094780eb44601656656, type: 3}
   _minTimeBetweenPlatformSpawns: 0.75
   _maxTimeBetweenPlatformSpawns: 2
   _platformPrefabs: []
   _topBound: {fileID: 572131956}
   _bottomBound: {fileID: 785638021}
   _floor: {fileID: 785638021}
-  _platformFloor: {fileID: 0}
+  _platformFloor: {fileID: 1819613582}
   _ceiling: {fileID: 572131956}
 --- !u!4 &2575575605545922549 stripped
 Transform:
