@@ -1,7 +1,9 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class FXManager : MonoBehaviour
 {
+    private AudioSource _musicFadeSource;
     private AudioSource _musicSource;
     private AudioSource[] _audioSources;
 
@@ -23,6 +25,8 @@ public class FXManager : MonoBehaviour
         _audioSources = new AudioSource[20];
         _musicSource = gameObject.AddComponent<AudioSource>();
         _musicSource.loop = true;
+        _musicFadeSource = gameObject.AddComponent<AudioSource>();
+        _musicFadeSource.loop = true;
         for (int i = 0; i < _audioSources.Length; i++)
         {
             _audioSources[i] = gameObject.AddComponent<AudioSource>();
@@ -73,11 +77,33 @@ public class FXManager : MonoBehaviour
     {
         if (_musicSource.clip != audioClip)
         {
-            _musicSource.clip = audioClip;
-            _musicSource.Play();
+            StartCoroutine(FadeInMusic(audioClip));
         }
     }
 
+    private IEnumerator FadeInMusic(AudioClip audioClip)
+    {
+        float t = 0f;
+        float duration = 1.0f;
+        _musicSource.volume = 1f;
+        _musicFadeSource.volume = 0f;
+        _musicFadeSource.clip = audioClip;
+        _musicFadeSource.Play();
+        while (t < 1.0f)
+        {
+            t += Time.unscaledDeltaTime;
+            float p = t / duration;
+            _musicSource.volume = Mathf.Lerp(1f, 0f, p);
+            _musicFadeSource.volume = Mathf.Lerp(0f, 1f, p);
+            yield return null;
+        }
+
+        _musicSource.clip = _musicFadeSource.clip;
+        _musicSource.time = _musicFadeSource.time;
+        _musicSource.volume = 1f;
+        _musicFadeSource.volume = 0f;
+        _musicSource.Play();
+    }
 
     public void Screenshake(int pixelStrength, float duration)
     {

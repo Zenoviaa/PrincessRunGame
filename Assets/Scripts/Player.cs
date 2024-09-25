@@ -142,8 +142,9 @@ public class Player : MonoBehaviour
     private void CheckCollisions()
     {
         bool prev = Physics2D.queriesStartInColliders;
+        bool prevHitTriggers = Physics2D.queriesHitTriggers;
         Physics2D.queriesStartInColliders = false;
-
+        Physics2D.queriesHitTriggers = false;
         bool groundHit = Physics2D.CapsuleCast(
             _collider.bounds.center, _collider.size, _collider.direction, 0, Vector2.down, groundCheckDistance, ~playerLayer);
 
@@ -160,6 +161,8 @@ public class Player : MonoBehaviour
         {
             _isGrounded = false;
         }
+
+        Physics2D.queriesHitTriggers = prevHitTriggers;
         Physics2D.queriesStartInColliders = prev;
     }
 
