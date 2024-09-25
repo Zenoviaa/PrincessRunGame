@@ -17,6 +17,7 @@ public class UIDialogueBox : MonoBehaviour
         Out
     }
 
+    private AudioClip _talkSound;
     private Vector3 _startSwoopPos;
     private Vector3 _endSwoopPos;
     private Action _onFinishCallback;
@@ -79,6 +80,8 @@ public class UIDialogueBox : MonoBehaviour
             {
                 isFinished = true;
             }
+            FXManager fXManager = FXManager.Instance;
+            fXManager.PlaySound(_talkSound);
         }
 
         _dialogueTMP.maxVisibleCharacters = _typewriterIndex;
@@ -109,6 +112,7 @@ public class UIDialogueBox : MonoBehaviour
 
     public void Talk(Dialogue dialogue)
     {
+        _talkSound = dialogue.talkSound;
         _bustImage.sprite = dialogue.bust;
         _typewriterTime = 0;
         _typewriterIndex = 0;

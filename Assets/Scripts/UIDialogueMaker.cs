@@ -9,7 +9,7 @@ public class UIDialogueMaker : MonoBehaviour
     private Action _onFinishCallback;
     [SerializeField] private UIDialogueBox _dialogueBox;
     [SerializeField] private Dialogue[] _dialogue;
-
+    [SerializeField] private AudioClip _continueSound;
     private void Update()
     {
         if (_dialoging && Input.GetButtonDown("Jump"))
@@ -44,6 +44,8 @@ public class UIDialogueMaker : MonoBehaviour
 
     private void Continue()
     {
+        FXManager fXManager = FXManager.Instance;
+        fXManager.PlaySound(_continueSound);
         if (_instance.isFinished)
         {
             _dialogueIndex++;

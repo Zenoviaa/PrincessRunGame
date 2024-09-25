@@ -10,9 +10,13 @@ public class UIGameOver : MonoBehaviour
     [SerializeField] private float _duration;
     [SerializeField] private Vector3 _startOffset;
 
+    [SerializeField] private AudioClip _continueSound;
+
     public string sceneToLoad = "MainMenu";
     public void RestartLevel()
     {
+        FXManager fXManager = FXManager.Instance;
+        fXManager.PlaySound(_continueSound);
         GameManager gameManager = GameManager.Instance;
         gameManager.LoadSceneWithTransition(sceneToLoad);
     }

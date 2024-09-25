@@ -110,8 +110,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f03b422c23fbbe46a669b8ca712f0f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _collectFXPrefab: {fileID: 0}
-  _collectFXSound: {fileID: 0}
+  _collectFXPrefab: {fileID: 2797591705493849376, guid: 5e4e66d33e79889479b325804ae2c45d, type: 3}
+  _collectFXSound: {fileID: 8300000, guid: 9456fa98fe12adf43ad6e7f3d11713c9, type: 3}
+  _spriteRenderer: {fileID: 1223587844952372479}
+  _spriteWhite: {fileID: 2100000, guid: 7639d9b43acb14648a3fe2ffbaea2ed6, type: 2}
   value: 1
 --- !u!114 &2690246201765403139
 MonoBehaviour:

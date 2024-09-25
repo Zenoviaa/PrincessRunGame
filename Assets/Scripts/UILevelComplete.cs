@@ -35,6 +35,7 @@ internal class UILevelComplete : MonoBehaviour
     private Player _player;
     [SerializeField] private UIImageTween[] _tweens;
     [SerializeField] private TMP_Text _crystalBerryTMP;
+    [SerializeField] private AudioClip _continueSound;
 
     public float GetLongestTween()
     {
@@ -84,6 +85,8 @@ internal class UILevelComplete : MonoBehaviour
 
         if (Input.GetButtonDown("Jump") && !_continueToDialogue && _state == State.Idle)
         {
+            FXManager fXManager = FXManager.Instance;
+            fXManager.PlaySound(_continueSound);
             _continueToDialogue = true;
         }
     }
