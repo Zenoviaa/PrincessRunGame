@@ -154,8 +154,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _dialogueBox: {fileID: 5868636932041363564, guid: 3e64e201e4e3a474a8b16cb157faf89c, type: 3}
   _dialogue:
-  - text: Hello there, I am a very nice person and I am not going to hurt you!
-    bust: {fileID: 21300000, guid: b8082b9480ee3d04e850ecd95814f10e, type: 3}
+  - text: "Ahhh I don\u2019t feel so well... "
+    bust: {fileID: 21300000, guid: de47ffcb787edcc4e857e2b51801aa7e, type: 3}
+  - text: " For monarchs sake please tell me you didn\u2019t eat those berries "
+    bust: {fileID: 21300000, guid: b754906601698a14e9da78ff6cbb5610, type: 3}
+  - text: ...
+    bust: {fileID: 21300000, guid: 90e658f07551c1c4c87ed10ba10e4a45, type: 3}
+  - text: "(The witch will probably need some supply\u2019s to make a potion for
+      you let\u2019s collect some on our way back! )(optional) "
+    bust: {fileID: 21300000, guid: 8d8f4638edfb8654a84385fc3b0fc150, type: 3}
 --- !u!114 &37451940
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1241,11 +1248,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _dialogueBox: {fileID: 5868636932041363564, guid: 3e64e201e4e3a474a8b16cb157faf89c, type: 3}
   _dialogue:
-  - text: Hi everyone Hi everyone Hi everyone Hi everyone Hi everyone Hi everyone
-      Hi everyoneHi everyone Hi everyone
-    bust: {fileID: 21300000, guid: 0441dca3720f59a4aa3d1aa80997defc, type: 3}
-  - text: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-    bust: {fileID: 21300000, guid: 90e658f07551c1c4c87ed10ba10e4a45, type: 3}
+  - text: 'The gnomes are doing construction on the bridge again. I need to get the
+      prince to the castle fast '
+    bust: {fileID: 21300000, guid: b754906601698a14e9da78ff6cbb5610, type: 3}
+  - text: 'U-underground caves will lead to the town '
+    bust: {fileID: 21300000, guid: de47ffcb787edcc4e857e2b51801aa7e, type: 3}
 --- !u!114 &1358969863
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45627,9 +45634,16 @@ MonoBehaviour:
   _maxRayScaleX: 2
   _prefabs:
   - {fileID: 6608529867980202313, guid: 69cfed70f37702f48a963e0cab5deffc, type: 3}
+  _minTimeBetweenBackgroundObjectSpawns: 0.75
+  _maxTimeBetweenBackgroundObjectSpawns: 2
+  _backgroundObjectPrefabs: []
+  _minTimeBetweenPlatformSpawns: 0.75
+  _maxTimeBetweenPlatformSpawns: 2
+  _platformPrefabs: []
   _topBound: {fileID: 572131956}
   _bottomBound: {fileID: 785638021}
   _floor: {fileID: 785638021}
+  _platformFloor: {fileID: 0}
   _ceiling: {fileID: 0}
 --- !u!4 &2575575605545922549 stripped
 Transform:

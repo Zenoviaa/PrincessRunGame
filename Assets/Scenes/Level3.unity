@@ -132,7 +132,6 @@ GameObject:
   m_Component:
   - component: {fileID: 37451941}
   - component: {fileID: 37451940}
-  - component: {fileID: 37451939}
   m_Layer: 0
   m_Name: Level Start Dialogue
   m_TagString: Untagged
@@ -140,22 +139,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &37451939
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 37451938}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3533a53268a78264a922a6f618d479c3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _dialogueBox: {fileID: 5868636932041363564, guid: 3e64e201e4e3a474a8b16cb157faf89c, type: 3}
-  _dialogue:
-  - text: Hello there, I am a very nice person and I am not going to hurt you!
-    bust: {fileID: 21300000, guid: b8082b9480ee3d04e850ecd95814f10e, type: 3}
 --- !u!114 &37451940
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -168,7 +151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46d244c1e1ba7b649909ffb994ba82ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _dialogueMaker: {fileID: 37451939}
+  _dialogueMaker: {fileID: 0}
 --- !u!4 &37451941
 Transform:
   m_ObjectHideFlags: 0
@@ -1025,11 +1008,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _dialogueBox: {fileID: 5868636932041363564, guid: 3e64e201e4e3a474a8b16cb157faf89c, type: 3}
   _dialogue:
-  - text: Hi everyone Hi everyone Hi everyone Hi everyone Hi everyone Hi everyone
-      Hi everyoneHi everyone Hi everyone
-    bust: {fileID: 21300000, guid: 0441dca3720f59a4aa3d1aa80997defc, type: 3}
-  - text: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-    bust: {fileID: 21300000, guid: 90e658f07551c1c4c87ed10ba10e4a45, type: 3}
+  - text: Hello witch (name), please brew something for the prince, he ate poison
+      berries again..
+    bust: {fileID: 21300000, guid: 2cc9a1e3f9912af4e8c9338c758c9070, type: 3}
 --- !u!114 &1358969863
 MonoBehaviour:
   m_ObjectHideFlags: 0
