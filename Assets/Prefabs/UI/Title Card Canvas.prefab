@@ -120,7 +120,6 @@ GameObject:
   - component: {fileID: 1608764379024272300}
   - component: {fileID: 738341900517165389}
   - component: {fileID: 4858941990925650519}
-  - component: {fileID: 6139981167531019181}
   m_Layer: 5
   m_Name: Title Card Canvas
   m_TagString: Untagged
@@ -205,18 +204,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7ee0b164a9f7f894992de8b537ef01dc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &6139981167531019181
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4928198334405000861}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 209ccbfe3d773ee4985b66a619751a30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &8914025554583574262

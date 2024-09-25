@@ -44,6 +44,8 @@ public class Player : MonoBehaviour
 
 
     [Header("Feedback")]
+    [SerializeField] private AudioClip _jumpSound;
+    [SerializeField] private AudioClip _landingSound;
     [SerializeField] private GameObject _hurtFXPrefab;
     [SerializeField] private AudioClip _hurtFXSound;
     [SerializeField] private GameObject _deathFXPrefab;
@@ -123,9 +125,11 @@ public class Player : MonoBehaviour
 
     private void HandleMovement()
     {
-        _animator.SetBool("run", GameManager.Instance.StartedLevel && !GameManager.Instance.EndedRun);
+        _animator.SetBool("run", GameManager.Instance.StartedLevel && !GameManager.Instance.EndedRun);   
         CheckCollisions();
-        if (_doJump && _isGrounded)
+
+        GameManager gameManager = GameManager.Instance;
+        if (_doJump && _isGrounded && !gameManager.EndedRun)
         {
             ExecuteJump();
         }
@@ -145,6 +149,8 @@ public class Player : MonoBehaviour
 
         if(!_isGrounded && groundHit)
         {
+            FXManager fXManager = FXManager.Instance;
+            fXManager.PlaySound(_landingSound);
             _isGrounded = true;
             _endedJumpEarly = false;
             _animator.SetBool("jump", false);
@@ -184,6 +190,8 @@ public class Player : MonoBehaviour
 
     private void ExecuteJump()
     {
+        FXManager fXManager = FXManager.Instance;
+        fXManager.PlaySound(_jumpSound);
         _velocity.y = jumpSpeed;
         _animator.SetBool("jump", true);
         _doJump = false;
@@ -203,7 +211,13 @@ public class Player : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
- 
+        //Can't die after dying or winning
+        if (health <= 0)
+            return;
+        GameManager gameManager = GameManager.Instance;
+        if (gameManager.EndedRun)
+            return;
+
         health -= damage;
         if(health <= 0)
         {

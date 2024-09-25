@@ -35,6 +35,7 @@ public class UIDialogueBox : MonoBehaviour
     {
         _startSwoopPos = _startSwoopPos + _swoopOffset;
         _endSwoopPos = _fullDialogueTransform.localPosition;
+        _fullDialogueTransform.localPosition = _startSwoopPos;
     }
 
     private void Update()

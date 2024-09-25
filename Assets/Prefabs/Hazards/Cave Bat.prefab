@@ -148,7 +148,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6968128909192481352}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -232,6 +232,7 @@ MonoBehaviour:
   spikeLayer:
     serializedVersion: 2
     m_Bits: 0
+  _goingUp: 0
   swooping: 1
   swoopMovementSpeed: 3
   swoopDuration: 2
