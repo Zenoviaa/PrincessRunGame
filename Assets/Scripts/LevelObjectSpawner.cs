@@ -125,7 +125,7 @@ public class LevelObjectSpawner : MonoBehaviour
 
     private void SpawnRayPrefab()
     {
-        if (_prefabs.Length <= 0)
+        if (_prefabs == null || _prefabs.Length <= 0)
             return;
 
         float y = UnityEngine.Random.Range(_bottomBound.transform.position.y, _topBound.transform.position.y);
@@ -176,7 +176,7 @@ public class LevelObjectSpawner : MonoBehaviour
 
     private void SpawnPlatformPrefab()
     {
-        if (_platformPrefabs.Length <= 0)
+        if (_platformPrefabs == null || _platformPrefabs.Length <= 0)
             return;
         _timeBetweenPlatformSpawns = UnityEngine.Random.Range(_minTimeBetweenPlatformSpawns, _maxTimeBetweenPlatformSpawns);
         Vector2 spawnPos = _platformFloor.position;
@@ -186,7 +186,7 @@ public class LevelObjectSpawner : MonoBehaviour
 
     private void SpawnBackgroundObjectPrefab()
     {
-        if (_backgroundObjectPrefabs.Length <= 0)
+        if (_backgroundObjectPrefabs == null || _backgroundObjectPrefabs.Length <= 0)
             return;
         _timeBetweenBackgroundObjectSpawns = UnityEngine.Random.Range(_minTimeBetweenBackgroundObjectSpawns, _maxTimeBetweenBackgroundObjectSpawns);
         Vector2 spawnPos = _platformFloor.position;
