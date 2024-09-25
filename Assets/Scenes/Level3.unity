@@ -50127,7 +50127,7 @@ MonoBehaviour:
     spawnLocation: 2
   - prefab: {fileID: 329202640575208062, guid: dab9f6da381e3b24a9b17e380a19819a, type: 3}
     spawnLocation: 1
-  _levelEndPrefab: {fileID: 108690489299409527, guid: 83c5d51406c9cb14bb826d70e4a49f84, type: 3}
+  _levelEndPrefab: {fileID: 5648986404477663060, guid: 4ae19679af40cde4d8a345c6c9e07af3, type: 3}
   _timeBetweenCollectibleSpawns: 7
   _collectibleSpawnPrefabs:
   - {fileID: 7568150034493050127, guid: 9c2cc8b60386ca84ea8ceae89c2f54b7, type: 3}
