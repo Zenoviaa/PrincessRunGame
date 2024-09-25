@@ -21,9 +21,13 @@ public class LevelObjectSpawner : MonoBehaviour
     private float _globalTimer;
     private float _timer;
     private float _collectibleTimer;
+    private float _platformTimer;
+    private float _backgroundObjectTimer;
     private bool _hasCompletedLevel;
     private float _timeBetweenSpawns;
     private float _timeBetweenRaySpawns;
+    private float _timeBetweenPlatformSpawns;
+    private float _timeBetweenBackgroundObjectSpawns;
 
     [Header("Hazards")]
     [SerializeField] private float _minTimeBetweenSpawns = 0.75f;
@@ -43,11 +47,24 @@ public class LevelObjectSpawner : MonoBehaviour
     [SerializeField] private float _maxRayScaleX;
     [SerializeField] private GameObject[] _prefabs;
 
+    [Header("Background Object Spawning")]
+    [SerializeField] private float _minTimeBetweenBackgroundObjectSpawns = 0.75f;
+    [SerializeField] private float _maxTimeBetweenBackgroundObjectSpawns = 2f;
+    [SerializeField] private GameObject[] _backgroundObjectPrefabs;
+
+
+    [Header("Platform Spawning")]
+    [SerializeField] private float _minTimeBetweenPlatformSpawns = 0.75f;
+    [SerializeField] private float _maxTimeBetweenPlatformSpawns = 2f;
+    [SerializeField] private GameObject[] _platformPrefabs;
+
     [Header("Boundaries")]
     [SerializeField] private Transform _topBound;
     [SerializeField] private Transform _bottomBound;
     [SerializeField] private Transform _floor;
+    [SerializeField] private Transform _platformFloor;
     [SerializeField] private Transform _ceiling;
+
 
     public float Progress => Math.Clamp(_globalTimer / _levelDuration, 0, 1);
 
@@ -89,6 +106,20 @@ public class LevelObjectSpawner : MonoBehaviour
         {
             _hasCompletedLevel = true;
             SpawnEndLevelPrefab();
+        }
+
+        _platformTimer += Time.deltaTime;
+        if(_platformTimer >= _timeBetweenPlatformSpawns)
+        {
+            _platformTimer = 0f;
+            SpawnPlatformPrefab();
+        }
+
+        _backgroundObjectTimer += Time.deltaTime;
+        if(_backgroundObjectTimer >= _timeBetweenBackgroundObjectSpawns)
+        {
+            _backgroundObjectTimer = 0;
+            SpawnBackgroundObjectPrefab();
         }
     }
 
@@ -141,6 +172,26 @@ public class LevelObjectSpawner : MonoBehaviour
                 break;
         }
     
+    }
+
+    private void SpawnPlatformPrefab()
+    {
+        if (_platformPrefabs.Length <= 0)
+            return;
+        _timeBetweenPlatformSpawns = UnityEngine.Random.Range(_minTimeBetweenPlatformSpawns, _maxTimeBetweenPlatformSpawns);
+        Vector2 spawnPos = _platformFloor.position;
+        var prefabToSpawn = _platformPrefabs[UnityEngine.Random.Range(0, _platformPrefabs.Length)];
+        Instantiate(prefabToSpawn, spawnPos, prefabToSpawn.transform.rotation);
+    }
+
+    private void SpawnBackgroundObjectPrefab()
+    {
+        if (_backgroundObjectPrefabs.Length <= 0)
+            return;
+        _timeBetweenBackgroundObjectSpawns = UnityEngine.Random.Range(_minTimeBetweenBackgroundObjectSpawns, _maxTimeBetweenBackgroundObjectSpawns);
+        Vector2 spawnPos = _platformFloor.position;
+        var prefabToSpawn = _backgroundObjectPrefabs[UnityEngine.Random.Range(0, _backgroundObjectPrefabs.Length)];
+        Instantiate(prefabToSpawn, spawnPos, prefabToSpawn.transform.rotation);
     }
 
     private void SpawnEndLevelPrefab()

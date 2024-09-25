@@ -56,6 +56,9 @@ public class SpriteOutlineFlicker : MonoBehaviour
             SpriteRenderer spriteRenderer = _spriteRenderers[i];
             spriteRenderer.material.SetColor("_Color", color);
             spriteRenderer.sprite = _targetSpriteRenderer.sprite;
+            spriteRenderer.transform.rotation = _targetSpriteRenderer.transform.rotation;
+            spriteRenderer.flipX = _targetSpriteRenderer.flipX;
+            spriteRenderer.flipY = _targetSpriteRenderer.flipY;
         }
     }
 }
