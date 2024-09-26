@@ -447,14 +447,14 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0.0023041475
-    width: 0.99948215
-    height: 0.9953917
+    y: 0
+    width: 0.9994243
+    height: 1
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 6.75
+  orthographic size: 5.625
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -563,7 +563,7 @@ MonoBehaviour:
   m_AssetsPPU: 16
   m_RefResolutionX: 320
   m_RefResolutionY: 180
-  m_CropFrame: 0
+  m_CropFrame: 4
   m_GridSnapping: 2
   m_FilterMode: 0
   m_UpscaleRT: 0
@@ -1057,8 +1057,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _dialogueBox: {fileID: 5868636932041363564, guid: 3e64e201e4e3a474a8b16cb157faf89c, type: 3}
   _dialogue:
-  - text: Hello witch (name), please brew something for the prince, he ate poison
-      berries again..
+  - text: Hello Celeste, please brew something for the prince, he ate poison berries
+      again..
     bust: {fileID: 21300000, guid: 2cc9a1e3f9912af4e8c9338c758c9070, type: 3}
     talkSound: {fileID: 8300000, guid: aebff10e667b1304b926f30502f74218, type: 3}
     timeBetweenTexts: 0.09
@@ -50646,6 +50646,10 @@ PrefabInstance:
     - target: {fileID: 4477918327943140290, guid: db62ab5b265f5644a9fe5c2f90c3405c, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4477918327943140290, guid: db62ab5b265f5644a9fe5c2f90c3405c, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 5616119943543348037, guid: db62ab5b265f5644a9fe5c2f90c3405c, type: 3}
       propertyPath: m_Camera

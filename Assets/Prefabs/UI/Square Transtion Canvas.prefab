@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4728476594084461787}
   - component: {fileID: 6937035183951499465}
   - component: {fileID: 6565013191699768043}
+  - component: {fileID: 4805607506064769376}
   m_Layer: 5
   m_Name: Square Transtion Canvas
   m_TagString: Untagged
@@ -60,7 +61,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 32767
   m_TargetDisplay: 0
 --- !u!114 &6937035183951499465
 MonoBehaviour:
@@ -74,12 +75,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
-  m_ReferencePixelsPerUnit: 100
+  m_UiScaleMode: 1
+  m_ReferencePixelsPerUnit: 16
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1280, y: 720}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 0.5
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -99,11 +100,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _uiSquarePrefab: {fileID: 7254721031659469750, guid: cabaedfeff2cfb844b1d2f9e102737cb, type: 3}
   _squareContent: {fileID: 2569910431994464904}
-  _transitionWidth: 700
-  _transitionHeight: 900
+  _transitionWidth: 1400
+  _transitionHeight: 2700
   _squareSize: 100
   _delayBetween: 0.025
   _duration: 3
+--- !u!114 &4805607506064769376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 866721282889215959}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ee0b164a9f7f894992de8b537ef01dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5723580660297497077
 GameObject:
   m_ObjectHideFlags: 0
@@ -160,7 +173,7 @@ MonoBehaviour:
   m_ChildAlignment: 6
   m_StartCorner: 2
   m_StartAxis: 1
-  m_CellSize: {x: 100, y: 100}
+  m_CellSize: {x: 200, y: 200}
   m_Spacing: {x: 0, y: 0}
   m_Constraint: 2
   m_ConstraintCount: 5
