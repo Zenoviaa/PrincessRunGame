@@ -166,8 +166,8 @@ MonoBehaviour:
     bust: {fileID: 21300000, guid: 90e658f07551c1c4c87ed10ba10e4a45, type: 3}
     talkSound: {fileID: 8300000, guid: 61890c235577a8a4fa75fd23d8ec7737, type: 3}
     timeBetweenTexts: 0.05
-  - text: "(The witch will probably need some supply\u2019s to make a potion for
-      you let\u2019s collect some on our way back! )(optional) "
+  - text: "The witch will probably need some supplies to make a potion for you let\u2019s
+      collect some on our way back!"
     bust: {fileID: 21300000, guid: 8d8f4638edfb8654a84385fc3b0fc150, type: 3}
     talkSound: {fileID: 8300000, guid: aebff10e667b1304b926f30502f74218, type: 3}
     timeBetweenTexts: 0.09
@@ -602,9 +602,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0
-    width: 0.9994243
-    height: 1
+    y: 0.3758655
+    width: 0.9008097
+    height: 1.1141506
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
